@@ -1,0 +1,31 @@
+---
+// component imports
+import Layout from "../layouts/Layout.astro";
+
+// vars css
+/*const foregroundColor = "hsl(20, 50%, 50%)";
+const backgroundColor = "hsl(200, 50%, 50%)";
+const isRed = false;*/
+
+// props
+const title = "Home";
+const description = "Bienvenido a la página principal del blog. Aquí subiré mis proyectos y mi presentación profesional";
+---
+
+<Layout title={title} description={description}>
+  <h1>Hi! Welcome to Home!</h1>
+  <p>{description}</p>
+  <!-- <p class:list={["big", {red: isRed}]}>{description}</p> -->
+</Layout>
+
+<!-- <style is:global define:vars={{foregroundColor, backgroundColor}}>
+  .big {
+    font-size: 4rem;
+    background-color: var(--backgroundColor);
+    color: var(--foregroundColor);
+  }
+
+  .red {
+    color: red;
+  }
+</style> -->

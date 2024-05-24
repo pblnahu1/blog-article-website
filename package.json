@@ -1,0 +1,21 @@
+{
+  "name": "blog-article-website",
+  "type": "module",
+  "version": "0.0.1",
+  "browerslist": [
+    "defaults"
+  ],
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^4.9.1",
+    "astro-icon": "^1.1.0",
+    "postcss": "^8.4.38",
+    "postcss-preset-env": "^9.5.14"
+  }
+}
