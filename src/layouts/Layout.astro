@@ -1,10 +1,14 @@
 ---
+
+// component imports
 import MainHead from './MainHead.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 
+// style imports
 import "../styles/global.css";
 
+// props
 interface Props {
 	title?: string;
 	description?: string;
@@ -17,8 +21,10 @@ const { title = "Default Title", description  = "Nothing for describe" } = Astro
 <html lang="en">
   <MainHead title={title} description={description} />
   <body>
-	<Nav />
-    <slot />
-	<Footer />
+	  <Nav />
+    <main>
+      <slot />
+    </main>
+	  <Footer />
   </body>
 </html>

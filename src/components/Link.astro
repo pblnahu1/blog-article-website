@@ -1,7 +1,8 @@
 ---
 // library imports
-import {Icon} from "astro-icon";
+import { Icon } from "astro-icon/components";
 
+// props
 interface Props {
     text: string;
     href: string;
@@ -39,7 +40,7 @@ const {
 >
 {
     icon && icon.side === "left" && (
-        <Icon name={icon.name} height="24" width="24" />
+        <Icon name={icon.name} x-height="24" widths="24" />
     )
 }
 
@@ -47,7 +48,7 @@ const {
 
 {
     icon && icon.side === "right" && (
-        <Icon name={icon.name} height="24" width="24" />
+        <Icon name={icon.name} x-height="24" widths="24" />
     )
 }
 </a>

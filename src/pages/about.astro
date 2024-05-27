@@ -1,11 +1,30 @@
 ---
-import Layout from "../layouts/Layout.astro";
 
+// component imports
+import Layout from "../layouts/Layout.astro";
+import Link from "../components/Link.astro";
+
+// props
 const title = "About";
 const description = "Soy un desarrollador fullstack y estudiante de Análisis de Sistemas.";
 ---
 
 <Layout title={title} description={description}>
-  <h1>Hi! Welcome to the page About!</h1>
-  <p>{description}</p>
+  <section class="container about" aria-label="About Me">
+    <img 
+      src="/images/headshot.jpg" 
+      alt="My headshot"
+      width="200"
+      height="330"
+    >
+    <div class="content">
+      <h1 class="h1">My Blog</h1>
+      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Excepturi eum voluptatem accusamus quas qui quisquam magnam dolor ducimus recusandae temporibus deserunt tenetur itaque minima amet corporis soluta cupiditate, ullam voluptatum!</p>
+      <Link
+        href="mailto:torrezpablo25@gmail.com"
+        style="primary"
+        text="Contact me"
+      />
+    </div>
+  </section>
 </Layout>
