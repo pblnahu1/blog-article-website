@@ -4,51 +4,43 @@ import { Icon } from "astro-icon/components";
 
 // props
 interface Props {
-    text: string;
-    href: string;
-    style: "primary" | "secondary";
-    icon?: {
-        name: string,
-        side: "left" | "right";
-    };
-    isFilled?: boolean;
-    borderVisible?: boolean;
-    classes?: string;
+  text: string;
+  href: string;
+  style: "primary" | "secondary";
+  icon?: {
+    name: string;
+    side: "left" | "right";
+  };
+  isFilled?: boolean;
+  borderVisible?: boolean;
+  classes?: string;
 }
 
-const {
-    text,
-    href,
-    style, 
-    icon, 
-    isFilled,
-    borderVisible,
-    classes,
-    ...rest
-} = Astro.props as Props;
+const { text, href, style, icon, isFilled, borderVisible, classes, ...rest } =
+  Astro.props as Props;
 ---
 
-<a 
-    href={href}
-    class:list={[
-        "link",
-        classes,
-        style,
-        {filled: isFilled, bordered: borderVisible},
-    ]}
-    {...rest}
+<a
+  href={href}
+  class:list={[
+    "link",
+    classes,
+    style,
+    { filled: isFilled, bordered: borderVisible },
+  ]}
+  {...rest}
 >
-{
+  {
     icon && icon.side === "left" && (
-        <Icon name={icon.name} x-height="24" widths="24" />
+      <Icon name={icon.name} x-height="24" widths="24" />
     )
-}
+  }
 
-<span>{text}</span>
+  <span>{text}</span>
 
-{
+  {
     icon && icon.side === "right" && (
-        <Icon name={icon.name} x-height="24" widths="24" />
+      <Icon name={icon.name} x-height="24" widths="24" />
     )
-}
+  }
 </a>

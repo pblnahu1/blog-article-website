@@ -9,12 +9,7 @@ import Footer from '../components/Footer.astro';
 import "../styles/global.css";
 
 // props
-interface Props {
-	title?: string;
-	description?: string;
-}
-
-const { title = "Default Title", description  = "Nothing for describe" } = Astro.props as Props;
+const { title = "My Astro Blog", description  = "My musings about the Astro framework" } = Astro.props;
 ---
 
 <!doctype html>

@@ -1,5 +1,4 @@
 ---
-
 // component imports
 import PostHeader from "../components/PostHeader.astro";
 import Layout from "./Layout.astro";
@@ -7,16 +6,15 @@ import Layout from "./Layout.astro";
 // props
 const { frontmatter } = Astro.props;
 
-const {title, description, date, category, author, image} = frontmatter;
-
+const { title, description, date, category, author, image } = frontmatter;
 ---
 
 <Layout {title} {description}>
-    <PostHeader {title} {description} {date} {category} {author} {image} />
-    <div class="post-content">
-        <div class="content">
-            <slot />
-        </div>
-        <div class="sidebar"></div>
+  <PostHeader {title} {description} {date} {category} {author} {image} />
+  <div class="post-content">
+    <div class="content">
+      <slot />
     </div>
+    <div class="sidebar"></div>
+  </div>
 </Layout>
