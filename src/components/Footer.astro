@@ -1,11 +1,19 @@
 ---
-
+import {Icon} from "astro-icon/components";
 ---
 
 <footer>
-  <small>
-    Copyright &copy; <span id="copyright"></span> | All rights reserved
-  </small>
+  <div>
+    <small>
+      Copyright &copy; <span id="copyright"></span> | All rights reserved
+    </small>
+    <small>
+      <a href="/rss.xml">
+        Suscribe to RSS
+        <Icon name="logomark"/>
+      </a>
+    </small>
+  </div>
 </footer>
 
 <script>
