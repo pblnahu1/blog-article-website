@@ -2,6 +2,7 @@
 // component imports
 import Layout from "../../layouts/Layout.astro";
 import PostCard from "../../components/PostCard.astro";
+import CategoryCloud from "../../components/CategoryCloud.astro";
 import Pagination from "../../components/Pagination.astro";
 
 // utils imports
@@ -19,7 +20,7 @@ export async function getStaticPaths({ paginate }) {
 
 // props
 const title = "My Post";
-const {page, data = [] } : { page: any, data: any[] } = Astro.props;
+const { page, data = [] }: { page: any; data: any[] } = Astro.props;
 ---
 
 <Layout title={title}>
@@ -29,11 +30,17 @@ const {page, data = [] } : { page: any, data: any[] } = Astro.props;
       {
         page.data.map((post: any) => (
           <PostCard
-            post={post}
+            frontmatter={post.frontmatter}
+            url={post.url}
+            tagType="h2"
           />
         ))
       }
     </div>
     <Pagination prevUrl={page.url.prev} nextUrl={page.url.next} />
   </section>
+  <aside class="container" aria-label="Blog categories">
+    <h2 class="h3">Blog Categories</h2>
+    <CategoryCloud showCount={true} />
+  </aside>
 </Layout>
